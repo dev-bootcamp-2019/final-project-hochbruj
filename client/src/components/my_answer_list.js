@@ -1,0 +1,52 @@
+import React, { Component } from 'react';
+import { Divider, Card } from 'semantic-ui-react'
+import AnswerItem from './answer_item'
+
+class MyAnswerList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = { log: null };
+    }
+
+
+    componentDidMount = async () => {
+        const log = await this.props.contract.getPastEvents('QuestionAnswered',
+            { filter: { answerer: this.props.accounts[0]},
+                fromBlock: 0,
+                toBlock: 'latest'
+            })
+
+        this.setState({ log })
+        console.log(log)
+     
+      }
+
+    
+    render() {
+        if (!this.state.log) {
+            return <div>You haven't answered any questions yet with this logged in account...</div>;
+          }
+
+        const questions = this.state.log.map((item) => {
+            return (
+            <AnswerItem
+                key={item.transactionHash}
+                contract={item.returnValues.dora}
+                web3={this.props.web3}
+                accounts={this.props.accounts}
+                answerIndex={item.returnValues.index}
+             />
+            );
+        });
+
+        return (
+            <div><Divider/>
+            <h2>Questions which I have answered</h2>
+            <Card.Group>{questions}</Card.Group></div>    
+        )
+    }
+    
+}
+
+export default MyAnswerList;
