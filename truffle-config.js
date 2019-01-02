@@ -26,4 +26,4 @@ module.exports = {
       gasPrice: 10000000000,
     }
   }
-};
+}

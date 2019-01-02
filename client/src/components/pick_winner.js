@@ -8,18 +8,20 @@ class PickWinner extends Component {
         this.state = { question: null,
                          contract: null,
                           answers: null,
-                            deadline: null };
+                            deadline: null,
+                             loading: false };
     }
 
     render() {
         return (
-            <Button color="green" onClick={this.pickWinner}>
+            <Button loading={!!this.state.loading} color="green" onClick={this.pickWinner}>
             Best answer
         </Button>)
     }
 
     pickWinner = async () => {
         try {
+            this.setState({ loading: true})
             await this.props.contract.pickWinner(this.props.answerIndex,{
                 from: this.props.accounts[0],
             })
@@ -27,6 +29,7 @@ class PickWinner extends Component {
             window.location.reload()
         } catch (err) {
             console.log(err)
+            this.setState({ loading: false})
         }
     }
 

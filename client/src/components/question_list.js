@@ -35,13 +35,20 @@ class QuestionList extends Component {
                 accounts={this.props.accounts}
              />
             );
-        });
+        })
+
+        if (questions.length > 0) {
 
         return (
             <div><Divider/>
             <h2>Questions asked by other users</h2>
             <Card.Group>{questions}</Card.Group></div>    
         )
+        }
+
+        else {
+            return <div><Divider/></div>              
+        }
     }
     
 }

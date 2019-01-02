@@ -39,7 +39,7 @@ contract('DoraFactory', async (accounts) => {
     assert.equal(accounts[1], logAsker)
   });
 
-  it("... should pause creating a new Dora (circuit braker) ", async () => {
+  it("... should pause creating a new Dora (circuit breaker) ", async () => {
     FactoryInstance = await DoraFactory.deployed();
 
     //only alice (owner) can pause the factory

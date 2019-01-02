@@ -5,7 +5,7 @@ class Answer extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { answer: '', modalOpen: false };
+        this.state = { answer: '', modalOpen: false, loading: false };
     }
     render() {
         return (
@@ -27,7 +27,7 @@ class Answer extends Component {
                         
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button color='green' onClick={this.handleClose}>Submit answer</Button>
+                        <Button loading={!!this.state.loading} color='green' onClick={this.handleClose}>Submit answer</Button>
                     </Modal.Actions>
 
                 </Modal>
@@ -38,6 +38,7 @@ class Answer extends Component {
 
     handleClose = async () => {
         try {
+            this.setState({ loading: true})
             await this.props.contract.postAnswer(this.state.answer,
                 {
                     from: this.props.accounts[0],
@@ -47,6 +48,7 @@ class Answer extends Component {
             window.location.reload()
         } catch (err) {
             console.log(err)
+            this.setState({ loading: false})
         }
     }
 

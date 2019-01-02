@@ -8,7 +8,7 @@ class AnswerItem extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { question: null, answer: null, contract: null };
+        this.state = { question: null, answer: null, contract: null, loading: false };
     }
 
 
@@ -42,7 +42,7 @@ class AnswerItem extends Component {
     renderRedeem() {
         if (this.state.question[3].toNumber() === 2 && this.state.question[5] == this.props.answerIndex) {
             return (<Card.Content>
-                        <Button color='green' onClick={this.redeem}>
+                        <Button loading={!!this.state.loading} color='green' onClick={this.redeem}>
                             Transfer reward of {parseFloat(this.props.web3.utils.fromWei(this.state.question[1], 'Ether'))
                     .toFixed(2)} Ether to my account
                         </Button>
@@ -52,11 +52,13 @@ class AnswerItem extends Component {
 
     redeem = async () => {
         try {
+            this.setState({ loading: true})
             await this.state.contract.withdrawReward({from: this.props.accounts[0]})
 
             window.location.reload()
         } catch (err) {
             console.log(err)
+            this.setState({ loading: false})
         }
     }
 

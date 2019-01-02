@@ -5,7 +5,7 @@ class NewQuestion extends Component {
     constructor(props) {
         super(props);
 
-        this.state = { question: '', reward: '' };
+        this.state = { question: '', reward: '', loading: false };
     }
     render() {
         return (
@@ -33,7 +33,7 @@ class NewQuestion extends Component {
                         }
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button color='green' onClick={this.postQuestion}>Post question</Button>
+                        <Button loading={!!this.state.loading} color='green' onClick={this.postQuestion}>Post question</Button>
                     </Modal.Actions>
 
                 </Modal>
@@ -43,16 +43,19 @@ class NewQuestion extends Component {
     postQuestion = async () => {
         try {
             const value = this.props.web3.utils.toWei(this.state.reward, 'ether') * 1.1
+            this.setState({ loading: true})
             await this.props.contract.createDora(this.state.question,
                 {
                     from: this.props.accounts[0],
                     value: value
                 })
-
+  
             window.location.reload()
         } catch (err) {
             console.log(err)
+            this.setState({ loading: false})
         }
+
     }
 
 
