@@ -91,6 +91,12 @@ class App extends Component {
         >
           My answers
         </Menu.Item>
+
+        <Menu.Menu position='right'>
+            <Menu.Item>
+                Your account: {this.state.accounts[0]}
+            </Menu.Item>
+          </Menu.Menu>
       </Menu>
      
       {this.renderPage()}

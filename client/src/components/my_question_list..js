@@ -11,12 +11,13 @@ class MyQuestionList extends Component {
 
 
     componentDidMount = async () => {
-        const log = await this.props.contract.getPastEvents('QuestionAsked',
+        var log = await this.props.contract.getPastEvents('QuestionAsked',
             { filter: { asker: this.props.accounts[0]},
                 fromBlock: 0,
                 toBlock: 'latest'
             })
-
+            
+        log.sort((a,b) => b.blockNumber - a.blockNumber);
         this.setState({ log })
      
       }

@@ -40,7 +40,7 @@ class AnswerItem extends Component {
     }
 
     renderRedeem() {
-        if (this.state.question[3].toNumber() === 2 && this.state.question[5] == this.props.answerIndex) {
+        if (this.state.question[3].toNumber() === 2 && this.state.question[5].toString() === this.props.answerIndex.toString()) {
             return (<Card.Content>
                         <Button loading={!!this.state.loading} color='green' onClick={this.redeem}>
                             Transfer reward of {parseFloat(this.props.web3.utils.fromWei(this.state.question[1], 'Ether'))
