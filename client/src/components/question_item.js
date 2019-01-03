@@ -53,7 +53,7 @@ class QuestionItem extends Component {
                     </Card.Content>
                    {this.renderAnswer()}
                    <Card.Content>
-                 <Card.Meta>To be answered by {this.state.deadline.toTimeString()}</Card.Meta>
+                 <Card.Meta>To be answered by {this.state.deadline.toString()}</Card.Meta>
                  </Card.Content>
                 </Card>  
         )

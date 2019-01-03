@@ -50,17 +50,17 @@ class MyQuestionItem extends Component {
             return (<Message success>You picked a winner and your deposit is credited to your account</Message>)
         }
         if (this.state.deadline > Date.now()) {
-            return (<Message warning>You can pick the best answer after {this.state.deadline.toTimeString()}</Message>)
+            return (<Message warning>You can pick the best answer after {this.state.deadline.toString()}.</Message>)
         }
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 1) {
-            return (<Message warning>Please pick a winner</Message>)
+            return (<Message warning>Please pick a winner!</Message>)
         }
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 0) {
-            return (<Button secondary onClick={this.redeem}>Transfer deposit and reward to my account</Button>)
+            return (<Button secondary onClick={this.redeem}>Transfer deposit and reward to my account!</Button>)
         }
 
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 3) {
-            return  (<Message success>The reward (and deposit) has been transferred</Message>)
+            return  (<Message success>The reward (and deposit) has been transferred.</Message>)
         }
 
     }

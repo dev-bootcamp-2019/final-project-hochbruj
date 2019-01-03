@@ -170,7 +170,7 @@ contract Dora is Ownable {
     }  
     
     /** @dev Selects best answer
-      * @param _index Index of answers array
+      * @param _index Index of best answer
     */
     function pickWinner(uint _index) public onlyOwner() {
         require(status != Status.WinnerPicked, "Winner has been picked already");
@@ -221,24 +221,18 @@ contract Dora is Ownable {
         answerer = answers[selectedAnswerIndex].answerer;
     }
 
-    /** @dev Gets other details than question
-      * @return reward
-      * @return deadline
-      * @return status
-      * @return answers count
-      * @return selected answer index
+    /** @dev Gets attributes of question
+      * @return Question
+      * @return Reward
+      * @return Deadline
+      * @return Status
+      * @return Answers count
+      * @return Index of best answer
      */
     function getSummary() public view returns (string, uint, uint, Status, uint, uint) {
         return (question, reward, deadline, status, answers.length, selectedAnswerIndex);
     }
     
-
-    /** @dev Gets number of answers
-      * @return answer count
-     */
-    function getAnswerCount() public view returns (uint) {
-        return answers.length;
-    }
 
 
 }
