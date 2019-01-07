@@ -121,7 +121,7 @@ class MyQuestionItem extends Component {
                 <Card fluid>
                     <Card.Content>
                     <Card.Header>{this.state.question[0]}</Card.Header>
-                    <Card.Meta>Reward: {parseFloat(this.props.web3.utils.fromWei(this.state.question[1], 'Ether'))
+                    <Card.Meta>Reward: {parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
                                 .toFixed(2)} Ether</Card.Meta>
                     </Card.Content>
                     <Card.Content>

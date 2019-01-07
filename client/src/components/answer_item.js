@@ -43,7 +43,7 @@ class AnswerItem extends Component {
         if (this.state.question[3].toNumber() === 2 && this.state.question[5].toString() === this.props.answerIndex.toString()) {
             return (<Card.Content>
                         <Button loading={!!this.state.loading} color='green' onClick={this.redeem}>
-                            Transfer reward of {parseFloat(this.props.web3.utils.fromWei(this.state.question[1], 'Ether'))
+                            Transfer reward of {parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
                     .toFixed(2)} Ether to my account
                         </Button>
                     </Card.Content>)
@@ -71,7 +71,7 @@ class AnswerItem extends Component {
             <Card fluid>
                 <Card.Content>
                     <Card.Header>{this.state.question[0]}</Card.Header>
-                    <Card.Meta>Reward: {parseFloat(this.props.web3.utils.fromWei(this.state.question[1], 'Ether'))
+                    <Card.Meta>Reward: {parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
                         .toFixed(2)} Ether</Card.Meta>
                 </Card.Content>
                 <Card.Content>

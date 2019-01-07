@@ -6,9 +6,19 @@ Every user can post questions which can be answered by other users. When a quest
 
 ## User Stories
 
-As a user, I want to get answers to questions which I can't solve by myself. In order to give an incentive to others to provide the best answers,  I am willing to pay a reward in Ether for the answer. I also need to pay a deposit in Ether so that I will pick the best answer when the time for answer submissions is expired. When I chose the best answer the deposit is transferred back to my account. If nobody answered my question, I can withdraw the deposit and reward from the contract.
+Like Quora, this platform brings 2 types of users together:
+(1) askers of questions and
+(2) posters of answers.
 
-As a user who knows the answer, I post an answer so that I have the chance to get the reward if my answer is chosen. If so I can withdraw the reward from the account.
+As an asker, I want to crowdsource answers to a question I ask, so that I get help from others with problems I can't solve myself.
+
+As an asker, I want to incentivise others (with a reward in Ether) to provide the best answer, so that I get more quality answers, and quicker.
+
+As an asker, I need to be able to pay a (refundable) deposit in Ether, so that I myself am incentivised to actually pick the best answer when the time for answer submissions has expired. When I chose the best answer, the deposit is transferred back to my account. If nobody answered my question, I can withdraw the deposit and reward from the contract.
+
+As a poster, I want to be able to post an answer so that I have the chance to get the reward if my answer is chosen as 'best answer'. 
+
+As a poster, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
 
 ## Installation
 
