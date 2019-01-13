@@ -212,7 +212,7 @@ contract Dora is Ownable {
     }
 
     /** @dev Gets best answer and address of answerer
-      * @return answer which cerator of question selected
+      * @return answer which craator of question selected
       * @return address of answerer
      */
     function winner() public view returns (string answer, address answerer) {
@@ -226,7 +226,7 @@ contract Dora is Ownable {
       * @return Reward
       * @return Deadline
       * @return Status
-      * @return Answers count
+      * @return number of answers
       * @return Index of best answer
      */
     function getSummary() public view returns (string, uint, uint, Status, uint, uint) {

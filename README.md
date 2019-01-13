@@ -20,7 +20,24 @@ As a poster, I want to be able to post an answer so that I have the chance to ge
 
 As a poster, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
 
+## Test
+
+Test have been written vor Truffle v4. therefore please use Truffle v4. when testing
+    ```javascript
+    truffle develop
+    test
+    ```
+
 ## Installation
+
+### Clone git repo
+    ```javascript
+    git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
+    cd final-project-hochbruj
+    ```
+
+
+### On local blockchain
 
 1. Run local blockchain.
     ```javascript
@@ -39,3 +56,12 @@ As a poster, I want to withdraw the reward from the account if my answer is chos
     npm run start
    ```
 
+### On Rinkeby Testnet
+
+1. Connect Metamask to Rinkeby Testnet
+
+2. In the client directory, run the React app. 
+   ```javascript
+    cd client
+    npm run start
+   ```

@@ -11,7 +11,8 @@ class MyQuestionItem extends Component {
         this.state = { question: null,
                          contract: null,
                           answers: null,
-                            deadline: null };
+                            deadline: null,
+                             loading: false };
     }
 
 
@@ -36,10 +37,12 @@ class MyQuestionItem extends Component {
 
     redeem = async () => {
         try {
+            this.setState({ loading: true})
             await this.state.contract.withdrawDepositReward({from: this.props.accounts[0]})
 
             window.location.reload()
         } catch (err) {
+            this.setState({ loading: false})
             console.log(err)
         }
     }
@@ -56,7 +59,7 @@ class MyQuestionItem extends Component {
             return (<Message warning>Please pick a winner!</Message>)
         }
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 0) {
-            return (<Button secondary onClick={this.redeem}>Transfer deposit and reward to my account!</Button>)
+            return (<Button secondary loading={!!this.state.loading} onClick={this.redeem}>Transfer deposit and reward to my account!</Button>)
         }
 
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 3) {

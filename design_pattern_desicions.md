@@ -1,7 +1,7 @@
 ### Factory Approach
 
 Every new question (dora) is a new smart contract which is created by the factory. This has two major advantages:
- - Less risk, because one contract only contains the reward for one question
+ - Less risk, because one contract only stores the reward for one question asked
  - Lower gas cost when interacting with question, because it contains less data
 
 ### Restricting Access
