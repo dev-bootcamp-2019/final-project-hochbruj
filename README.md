@@ -1,24 +1,23 @@
 # Dora - Decentralized Quora on Ethereum
 
-Dora works similar to Quora or Stackoverflow. 
+Dora is a platform similar to Quora or Stackoverflow, except the best answers get you paid.
 
-Every user can post questions which can be answered by other users. When a question is posted a reward for the best answer is locked in a smart contract. The creator of the question also needs to pay a deposit. After a certain time frame the user who asked the question can pick the best answer, the deposit is returned then. Afer that the creator of the best answer can then claim the reward.
 
 ## User Stories
 
 Like Quora, this platform brings 2 types of users together:
 (1) askers of questions and
-(2) posters of answers.
+(2) responders to questions.
 
 As an asker, I want to crowdsource answers to a question I ask, so that I get help from others with problems I can't solve myself.
 
 As an asker, I want to incentivise others (with a reward in Ether) to provide the best answer, so that I get more quality answers, and quicker.
 
-As an asker, I need to be able to pay a (refundable) deposit in Ether, so that I myself am incentivised to actually pick the best answer when the time for answer submissions has expired. When I chose the best answer, the deposit is transferred back to my account. If nobody answered my question, I can withdraw the deposit and reward from the contract.
+As an asker, I need to be able to pay a (refundable) deposit in Ether (currently set to 10% of reward), so that I myself am incentivised to actually pick the best answer when the time for answer submissions has expired (currently set to 3 days). When I chose the best answer, the deposit is transferred back to my account. If nobody answered my question, I can withdraw the deposit and reward from the contract.
 
-As a poster, I want to be able to post an answer so that I have the chance to get the reward if my answer is chosen as 'best answer'. 
+As a responder, I want to be able to post an answer so that I have the chance to get the reward if my answer is chosen as 'best answer'. 
 
-As a poster, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
+As a responder, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
 
 ## Clone git repo
 ```

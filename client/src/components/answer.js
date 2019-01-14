@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form, Card } from 'semantic-ui-react'
+import { Button, Modal, Form } from 'semantic-ui-react'
 
 class Answer extends Component {
     constructor(props) {
@@ -10,7 +10,7 @@ class Answer extends Component {
     render() {
         return ( 
                 <Modal
-                    trigger={<Button secondary onClick={this.handleOpen}>Post answer</Button>}
+                    trigger={<Button color='green' onClick={this.handleOpen}>Post Answer</Button>}
                 >
                     <Modal.Header>{this.props.question}</Modal.Header>
                     <Modal.Content>
@@ -25,7 +25,7 @@ class Answer extends Component {
                         
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button loading={!!this.state.loading} color='green' onClick={this.submit}>Submit answer</Button>
+                        <Button loading={!!this.state.loading} color='green' onClick={this.submit}>Submit Answer</Button>
                     </Modal.Actions>
 
                 </Modal>

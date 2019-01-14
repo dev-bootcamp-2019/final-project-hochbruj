@@ -10,14 +10,14 @@ class NewQuestion extends Component {
     render() {
         return (
                 <Modal
-                    trigger={<Button primary>Ask a question</Button>}>
-                    <Modal.Header>What do you want to know</Modal.Header>
+                    trigger={<Button primary>Ask Question</Button>}>
+                    <Modal.Header>What do you want to know?</Modal.Header>
                     <Modal.Content>
                         <Modal.Description>
                             <Form>
                                 <Form.TextArea
                                     label='Question'
-                                    placeholder='Post a precise question...'
+                                    placeholder='Keep your question short and to the point'
                                     onChange={event => this.setState({ question: event.target.value })} />
                                 <Form.Input
                                     type='number'
@@ -28,12 +28,15 @@ class NewQuestion extends Component {
                         </Modal.Description>
                         {this.state.reward &&
                             <Message warning>
-                                <Message.Header>Your total payment will be {(this.state.reward * 1.1).toFixed(2)} Ether (plus gas cost). {(this.state.reward * 0.1).toFixed(2)} Ether will be returned to your account when you pick the best answer.</Message.Header>
+                                <Message.Header>
+                                    <li>Deposit (returned when you pick best answer): {(this.state.reward * 0.1).toFixed(2)} Ether</li>
+                                    <li>Total payment: {(this.state.reward * 1.1).toFixed(2)} Ether</li>
+                                    </Message.Header>
                             </Message>
                         }
                     </Modal.Content>
                     <Modal.Actions>
-                        <Button loading={!!this.state.loading} color='green' onClick={this.postQuestion}>Post question</Button>
+                        <Button loading={!!this.state.loading} color='green' onClick={this.postQuestion}>Add Question</Button>
                     </Modal.Actions>
 
                 </Modal>

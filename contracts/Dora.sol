@@ -144,7 +144,7 @@ contract Dora is Ownable {
         // 10% of sent ether is deposit
         reward = (msg.value.div(11).mul(10));
         // deadline in one week
-        deadline = now.add(5 minutes);
+        deadline = now.add(3 days);
     
     }
        

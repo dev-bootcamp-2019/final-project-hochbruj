@@ -26,13 +26,13 @@ class AnswerItem extends Component {
 
     renderMessage() {
         if (this.state.question[3].toNumber() === 1) {
-            return (<Message warning>Waiting for decision...</Message>)
+            return (<Message warning>Thanks! We'll let you know if your answer is picked as the best one.</Message>)
         }
         if (this.state.question[3].toNumber() === 2 && this.state.question[5].toString() === this.props.answerIndex.toString()) {
             return (<Message success>Congratulations, your answer has been chosen! Please claim your reward.</Message>)
         }
         if (this.state.question[3].toNumber() === 2 && this.state.question[5].toString() !== this.props.answerIndex.toString()) {
-            return (<Message warning>Sorry, your answer was not chosen!</Message>)
+            return (<Message warning>Sorry, your answer has not been chosen!</Message>)
         }
         if (this.state.question[3].toNumber() === 3 && this.state.question[5].toString() === this.props.answerIndex.toString()) {
             return (<Message success>The reward has been transferred to your account</Message>)
@@ -44,7 +44,7 @@ class AnswerItem extends Component {
         if (this.state.question[3].toNumber() === 2 && this.state.question[5].toString() === this.props.answerIndex.toString()) {
             return (<Card.Content>
                         <Button loading={!!this.state.loading} color='green' onClick={this.redeem}>
-                            Transfer reward of {parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
+                            Transfer {parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
                     .toFixed(2)} Ether to my account
                         </Button>
                     </Card.Content>)

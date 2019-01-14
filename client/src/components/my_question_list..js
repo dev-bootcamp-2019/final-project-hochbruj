@@ -48,7 +48,7 @@ class MyQuestionList extends Component {
 
         return (
             <div><Divider/>
-            <h2>Questions which I have asked</h2>
+            <h2>Questions I have asked</h2>
             <Card.Group>{questions}</Card.Group></div>    
         )
     }

@@ -58,11 +58,14 @@ class MyQuestionItem extends Component {
             return (<Message warning>Please pick a winner!</Message>)
         }
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 0) {
-            return (<Button secondary loading={!!this.state.loading} onClick={this.redeem}>Transfer deposit and reward to my account!</Button>)
+            return (<div><Button color="green" loading={!!this.state.loading} onClick={this.redeem}>Get a full refund</Button>
+                    <Message warning>{parseFloat(this.props.web3.utils.fromWei(this.state.question[1].toString(), 'Ether'))
+                    .toFixed(2)*1.1} Ether (reward and deposit) will be transferred back into your account.</Message>
+                    </div>)
         }
 
         if (this.state.deadline < Date.now() && this.state.question[3].toNumber() === 3) {
-            return  (<Message success>The reward (and deposit) has been transferred.</Message>)
+            return  (<Message success>The reward and deposit has been transferred back into your account.</Message>)
         }
 
     }
@@ -108,7 +111,7 @@ class MyQuestionItem extends Component {
         } else {
             return (
                 <Table.Row>
-                    <Table.Cell>Nobody has answered your question yet.</Table.Cell>
+                    <Table.Cell>Nobody has answered your question.</Table.Cell>
                 </Table.Row>
             )
         }
