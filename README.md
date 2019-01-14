@@ -20,9 +20,15 @@ As a poster, I want to be able to post an answer so that I have the chance to ge
 
 As a poster, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
 
+## Clone git repo
+```
+git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
+cd final-project-hochbruj
+```
+
 ## Test
 
-Test have been written vor Truffle v4. therefore please use Truffle v4. when testing
+Tests have been written in Truffle v4. therefore please use Truffle v4. when testing
 
 ```
 truffle develop
@@ -30,13 +36,6 @@ test
 ```
 
 ## Installation
-
-### Clone git repo
-```
-git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
-cd final-project-hochbruj
-```
-
 
 ### On local blockchain
 
