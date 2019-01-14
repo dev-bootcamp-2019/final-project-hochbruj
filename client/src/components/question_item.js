@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card } from 'semantic-ui-react'
+import { Card, Message } from 'semantic-ui-react'
 import Dora from '../contracts/Dora'
 import truffleContract from "truffle-contract";
 import Answer from './answer'
@@ -30,9 +30,25 @@ class QuestionItem extends Component {
                     web3={this.props.web3}
                     contract={this.state.contract}
                     accounts={this.props.accounts}
-                    question={this.state.question[0]}/>
+                    question={this.state.question[0]}
+                    setPage={this.props.setPage.bind(this)}/>  
+                </Card.Content>  
+            )
+        }
+    }
+
+    renderMessage() {
+        if (this.state.deadline > Date.now()) {
+            return (
+                <Card.Content>
+                    <Message warning>To be answered by {this.state.deadline.toString()}</Message>
                 </Card.Content>
-                
+            )
+        } else {
+            return (
+                <Card.Content>
+                    <Message error>The deadline for answer submission has been expired.</Message>
+                </Card.Content>
             )
         }
     }
@@ -52,9 +68,7 @@ class QuestionItem extends Component {
                                 .toFixed(2)} Ether</Card.Meta>
                     </Card.Content>
                    {this.renderAnswer()}
-                   <Card.Content>
-                 <Card.Meta>To be answered by {this.state.deadline.toString()}</Card.Meta>
-                 </Card.Content>
+                   {this.renderMessage()}                 
                 </Card>  
         )
     }

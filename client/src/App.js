@@ -9,8 +9,11 @@ import MyAnswerList from './components/my_answer_list'
 import MyQuestionList from './components/my_question_list.'
  
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null, activeItem: 'dora' };
+  state = { storageValue: 0, web3: null, accounts: null, contract: null, activeItem: 'dora' }
+
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+
+  setPage(name) { this.setState({ activeItem: name }) }
 
   componentDidMount = async () => {
     try {
@@ -25,7 +28,7 @@ class App extends Component {
       Contract.setProvider(web3.currentProvider);
       const instance = await Contract.deployed();
       
-      this.setState({ web3, accounts, contract: instance});
+      this.setState({ web3, accounts, contract: instance}, this.setEventMonitors);
     } catch (error) {
       // Catch any errors for any of the above operations.
       alert(
@@ -35,6 +38,16 @@ class App extends Component {
     }
   };
 
+  setEventMonitors = async () => {
+    window.ethereum.on('accountsChanged', this.changeAccount);
+  };
+
+  changeAccount = async (accounts) => {
+    console.log("Account change detected :" + accounts);
+    this.setState({accounts});
+  };
+
+
   renderPage() {
     const { activeItem } = this.state
     if (activeItem === 'dora')
@@ -42,6 +55,7 @@ class App extends Component {
       accounts={this.state.accounts}
       web3={this.state.web3}
       contract={this.state.contract}
+      setPage={this.setPage.bind(this)}
       />
     if (activeItem === 'myAnswers')
       return <MyAnswerList

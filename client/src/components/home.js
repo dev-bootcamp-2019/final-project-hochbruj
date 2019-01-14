@@ -12,11 +12,13 @@ class Home extends Component {
                 web3={this.props.web3}
                 accounts={this.props.accounts}
                 contract={this.props.contract}
+                setPage={this.props.setPage.bind(this)}
             />
             <QuestionList
                 web3={this.props.web3}
                 accounts={this.props.accounts}
                 contract={this.props.contract}
+                setPage={this.props.setPage.bind(this)}
             />
             </div>
         );

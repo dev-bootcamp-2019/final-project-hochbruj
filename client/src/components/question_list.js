@@ -35,6 +35,7 @@ class QuestionList extends Component {
                 contract={item.returnValues.dora}
                 web3={this.props.web3}
                 accounts={this.props.accounts}
+                setPage={this.props.setPage.bind(this)}
              />
             );
         })

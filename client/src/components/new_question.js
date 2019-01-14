@@ -49,12 +49,14 @@ class NewQuestion extends Component {
                     from: this.props.accounts[0],
                     value: value
                 })
-  
-            window.location.reload()
+            this.setState({ loading: false})
+            this.props.setPage('myQuestions')
+ //           window.location.reload()
         } catch (err) {
             console.log(err)
             this.setState({ loading: false})
         }
+          
 
     }
 

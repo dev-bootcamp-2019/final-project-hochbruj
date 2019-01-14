@@ -39,7 +39,6 @@ class MyQuestionItem extends Component {
         try {
             this.setState({ loading: true})
             await this.state.contract.withdrawDepositReward({from: this.props.accounts[0]})
-
             window.location.reload()
         } catch (err) {
             this.setState({ loading: false})

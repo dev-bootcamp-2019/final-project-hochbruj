@@ -11,6 +11,14 @@ class MyQuestionList extends Component {
 
 
     componentDidMount = async () => {
+        this.updateLog()
+      }
+    
+    componentDidUpdate = async () => {
+        this.updateLog()
+      }
+
+    updateLog = async () => {
         var log = await this.props.contract.getPastEvents('QuestionAsked',
             { filter: { asker: this.props.accounts[0]},
                 fromBlock: 0,
@@ -19,8 +27,7 @@ class MyQuestionList extends Component {
             
         log.sort((a,b) => b.blockNumber - a.blockNumber);
         this.setState({ log })
-     
-      }
+    }
 
     
     render() {

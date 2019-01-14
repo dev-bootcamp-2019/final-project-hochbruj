@@ -23,18 +23,19 @@ As a poster, I want to withdraw the reward from the account if my answer is chos
 ## Test
 
 Test have been written vor Truffle v4. therefore please use Truffle v4. when testing
-    ```javascript
-    truffle develop
-    test
-    ```
+
+```
+truffle develop
+test
+```
 
 ## Installation
 
 ### Clone git repo
-    ```javascript
-    git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
-    cd final-project-hochbruj
-    ```
+```
+git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
+cd final-project-hochbruj
+```
 
 
 ### On local blockchain

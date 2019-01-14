@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Modal, Form } from 'semantic-ui-react'
+import { Button, Modal, Form, Card } from 'semantic-ui-react'
 
 class Answer extends Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class Answer extends Component {
         this.state = { answer: '', loading: false };
     }
     render() {
-        return (
+        return ( 
                 <Modal
                     trigger={<Button secondary onClick={this.handleOpen}>Post answer</Button>}
                 >
@@ -41,8 +41,8 @@ class Answer extends Component {
                     from: this.props.accounts[0],
                 })
 
-            this.setState({ modalOpen: false })
-            window.location.reload()
+            this.setState({ modalOpen: false, loading: false })
+            this.props.setPage('myAnswers')
         } catch (err) {
             console.log(err)
             this.setState({ loading: false})
