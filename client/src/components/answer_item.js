@@ -18,7 +18,6 @@ class AnswerItem extends Component {
         const contract = await DoraContract.at(this.props.contract)
         this.setState({ contract })
         const question = await contract.getSummary()
-        console.log(question)
         const answer = await contract.answers(this.props.answerIndex)
         this.setState({ question, answer })
 
@@ -66,7 +65,7 @@ class AnswerItem extends Component {
 
     render() {
         if (!this.state.question) {
-            return <div>Loading your answered questions...</div>;
+            return <div>Loading your answered question...</div>;
         }
         return (
             <Card fluid>

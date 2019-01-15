@@ -120,7 +120,7 @@ class MyQuestionItem extends Component {
     
     render() {
         if (!this.state.question) {
-            return <div>Loading question...</div>;
+            return <div>Loading your asked question...</div>;
           }
         return (
                 <Card fluid>
