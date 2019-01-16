@@ -1,3 +1,7 @@
 Rinkeby Testnet:
 
-DoraFactory: 0xe83f32fafabc5edc903eff39ee9d7d37c6d154d4
+DoraFactory: 0x9Cb22F590DE23A5872694fDcAEB5d0f04F4584e2
+
+Verify code at:
+https://rinkeby.etherscan.io/address/0x9cb22f590de23a5872694fdcaeb5d0f04f4584e2#code
+

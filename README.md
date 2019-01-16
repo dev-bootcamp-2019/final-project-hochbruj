@@ -19,10 +19,11 @@ As a responder, I want to be able to post an answer so that I have the chance to
 
 As a responder, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
 
-## Clone git repo
+## Dowload and install
 ```
 git clone https://github.com/dev-bootcamp-2019/final-project-hochbruj.git
-cd final-project-hochbruj
+cd final-project-hochbruj/client
+npm install
 ```
 
 ## Test
