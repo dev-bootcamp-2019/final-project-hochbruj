@@ -65,3 +65,10 @@ test
     cd client
     npm run start
    ```
+
+## Visit site hosted on IPFS
+
+Initial loading of the site might take several minutes, because file size of the react app is preety large.
+If web3 doesn't get injected at first time, please try a refresh.
+[https://ipfs.io/ipfs/QmPGHPogFJTwLKN5LW5fNoNQkFjebnrbE4eWf2yKSZamwG/]
+
