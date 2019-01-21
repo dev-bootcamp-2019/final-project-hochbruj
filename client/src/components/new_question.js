@@ -29,8 +29,8 @@ class NewQuestion extends Component {
                         {this.state.reward &&
                             <Message warning>
                                 <Message.Header>
-                                    <li>Deposit (returned when you pick best answer): {(this.state.reward * 0.1).toFixed(2)} Ether</li>
-                                    <li>Total payment: {(this.state.reward * 1.1).toFixed(2)} Ether</li>
+                                    <li>Deposit (returned when you pick best answer): {(this.state.reward * 0.1).toFixed(4)} Ether</li>
+                                    <li>Total payment: {(this.state.reward * 1.1).toFixed(4)} Ether</li>
                                     </Message.Header>
                             </Message>
                         }
@@ -45,7 +45,7 @@ class NewQuestion extends Component {
 
     postQuestion = async () => {
         try {
-            const value = this.props.web3.utils.toWei(this.state.reward, 'ether') * 1.1
+            const value = Math.round((this.props.web3.utils.toWei(this.state.reward, 'ether') * 1.1))
             this.setState({ loading: true})
             await this.props.contract.createDora(this.state.question,
                 {

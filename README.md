@@ -17,7 +17,7 @@ As an asker, I need to be able to pay a (refundable) deposit in Ether (currently
 
 As a responder, I want to be able to post an answer so that I have the chance to get the reward if my answer is chosen as 'best answer'. 
 
-As a responder, I want to withdraw the reward from the account if my answer is chosen as 'besst answer', so that I am paid.
+As a responder, I want to withdraw the reward from the account if my answer is chosen as 'best answer', so that I am paid.
 
 ## Dowload and install
 ```
@@ -66,7 +66,7 @@ test
     npm run start
    ```
 
-## dApp hosted on IPFS
+## dApp hosted on IPFS (using Rinkeby Testnet)
 
 Initial loading might take several minutes, because file size of the react app is pretty large.
 If web3 doesn't get injected at first time, please try a refresh.
