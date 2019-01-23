@@ -71,5 +71,5 @@ test
 Initial loading might take several minutes, because file size of the react app is pretty large.
 If web3 doesn't get injected at first time, please try a refresh.
 
-https://ipfs.io/ipfs/QmPGHPogFJTwLKN5LW5fNoNQkFjebnrbE4eWf2yKSZamwG/
+https://ipfs.io/ipfs/QmQT59MDoAw1GXTNK1wtX4ixVBwq91V4hiVwVx2ssxWmiD/
 
